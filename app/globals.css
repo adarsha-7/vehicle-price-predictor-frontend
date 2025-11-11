@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: rgb(255, 255, 255);
+    --foreground: rgb(23, 23, 23);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-roboto: var(--font-roboto);
+    --font-roboto-mono: var(--font-roboto-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+    .label {
+        @apply text-[13px] text-gray-700 font-medium;
+    }
+    .input {
+        @apply h-10 w-full mt-1 rounded-md shadow-2xs p-3 border text-[14px] border-gray-200 text-gray-700 placeholder:text-gray-500 placeholder:font-normal placeholder:text-[13px];
+    }
+    .input:focus {
+        @apply outline-3 border-gray-400 outline-stone-300;
+    }
+    .select-options {
+        @apply p-3 text-[14px] text-gray-700 hover:bg-gray-100;
+    }
 }
