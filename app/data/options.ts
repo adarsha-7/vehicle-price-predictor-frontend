@@ -1,15 +1,17 @@
-export const cylindersOptions: { value: string; label: string }[] = [
-    { value: "3", label: "3 Cylinders" },
-    { value: "4", label: "4 Cylinders" },
-    { value: "5", label: "5 Cylinders" },
-    { value: "6", label: "6 Cylinders" },
-    { value: "8", label: "8 Cylinders" },
-    { value: "10", label: "10 Cylinders" },
-    { value: "12", label: "12 Cylinders" },
+import { OptionType } from "../types";
+
+export const cylindersOptions: OptionType[] = [
+    { value: "3 cylinders", label: "3 Cylinders" },
+    { value: "4 cylinders", label: "4 Cylinders" },
+    { value: "5 cylinders", label: "5 Cylinders" },
+    { value: "6 cylinders", label: "6 Cylinders" },
+    { value: "8 cylinders", label: "8 Cylinders" },
+    { value: "10 cylinders", label: "10 Cylinders" },
+    { value: "12 cylinders", label: "12 Cylinders" },
     { value: "other", label: "Other" },
 ];
 
-export const manufacturerOptions: { value: string; label: string }[] = [
+export const manufacturerOptions: OptionType[] = [
     { value: "aston-martin", label: "Aston Martin" },
     { value: "audi", label: "Audi" },
     { value: "bmw", label: "BMW" },
@@ -37,56 +39,48 @@ export const manufacturerOptions: { value: string; label: string }[] = [
     { value: "nissan", label: "Nissan" },
     { value: "porsche", label: "Porsche" },
     { value: "ram", label: "Ram" },
-    { value: "renault", label: "Renault" },
     { value: "rover", label: "Rover" },
     { value: "subaru", label: "Subaru" },
-    { value: "suzuki", label: "Suzuki" },
-    { value: "tesla", label: "Tesla" },
     { value: "toyota", label: "Toyota" },
     { value: "volkswagen", label: "Volkswagen" },
     { value: "volvo", label: "Volvo" },
     { value: "other", label: "Other" },
 ];
 
-export const conditionOptions = [
+export const conditionOptions: OptionType[] = [
     { value: "new", label: "New" },
-    { value: "like-new", label: "Like New" },
+    { value: "like new", label: "Like New" },
     { value: "excellent", label: "Excellent" },
     { value: "good", label: "Good" },
     { value: "fair", label: "Fair" },
     { value: "salvage", label: "Salvage" },
-    { value: "other", label: "Other" },
 ];
 
-export const fuelOptions = [
+export const fuelOptions: OptionType[] = [
     { value: "diesel", label: "Diesel" },
-    { value: "electric", label: "Electric" },
     { value: "gas", label: "Gas" },
-    { value: "hybrid", label: "Hybrid" },
     { value: "other", label: "Other" },
 ];
 
-export const transmissionOptions = [
+export const transmissionOptions: OptionType[] = [
     { value: "automatic", label: "Automatic" },
     { value: "manual", label: "Manual" },
     { value: "other", label: "Other" },
 ];
 
-export const driveOptions = [
+export const driveOptions: OptionType[] = [
     { value: "4wd", label: "4WD" },
     { value: "fwd", label: "FWD" },
     { value: "rwd", label: "RWD" },
-    { value: "other", label: "Other" },
 ];
 
-export const vehicleOptions = [
+export const vehicleOptions: OptionType[] = [
     { value: "bus", label: "Bus" },
     { value: "convertible", label: "Convertible" },
     { value: "coupe", label: "Coupe" },
     { value: "hatchback", label: "Hatchback" },
     { value: "mini-van", label: "Mini-Van" },
     { value: "offroad", label: "Offroad" },
-    { value: "other", label: "Other" },
     { value: "pickup", label: "Pickup" },
     { value: "sedan", label: "Sedan" },
     { value: "SUV", label: "SUV" },

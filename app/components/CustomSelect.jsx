@@ -9,9 +9,9 @@ const CustomSelect = ({ name, label, placeholder, options, selectedOption, setSe
             height: "40px",
             borderRadius: "0.5rem",
             border: state.isFocused
-                ? "1px solid #9CA3AF" // clicked/focused border
+                ? "1px solid #D1D5DB" // clicked/focused border
                 : state.isHover
-                ? "1px solid #9CA3AF" // hovered border (react-select can't detect hover in styles)
+                ? "1px solid #D1D5DB" // hovered border (react-select can't detect hover in styles)
                 : "1px solid #E5E7EB", // default border
             boxShadow: state.isFocused
                 ? "0 0 0 3px #D6D3D1" // clicked/focused ring
@@ -20,7 +20,7 @@ const CustomSelect = ({ name, label, placeholder, options, selectedOption, setSe
             color: "#374151",
             outline: "none",
             "&:hover": {
-                borderColor: "#9CA3AF",
+                borderColor: "#D1D5DB",
             },
         }),
         placeholder: (base) => ({
@@ -54,6 +54,9 @@ const CustomSelect = ({ name, label, placeholder, options, selectedOption, setSe
             padding: "8px 12px",
             fontSize: "14px",
             cursor: "pointer",
+            "&:active": {
+                backgroundColor: "#F3F4F6",
+            },
         }),
     };
 
