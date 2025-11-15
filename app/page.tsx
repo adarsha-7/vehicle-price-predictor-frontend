@@ -9,6 +9,7 @@ import type { formPropsType, OptionType } from "./types";
 export default function Home() {
     const [serverReady, setServerReady] = useState<boolean>(false);
     const [prediction, setPrediction] = useState<null | number>(null);
+    const [priceLoading, setPriceLoading] = useState<boolean>(false);
     // wake the server
     useEffect(() => {
         axios
@@ -38,6 +39,7 @@ export default function Home() {
         vehicleType,
         serverReady,
         prediction,
+        priceLoading,
         setCylindersType,
         setManufacturerType,
         setConditionType,
@@ -47,15 +49,17 @@ export default function Home() {
         setVehicleType,
         setServerReady,
         setPrediction,
+        setPriceLoading,
     };
 
     return (
         <div>
-            <main className="flex flex-col w-full h-full items-center gap-10 py-10 px-3 justify-center">
-                <h1 className="font-bold text-center text-4xl bg-clip-text bg-linear-to-r from-blue-600 to-teal-600 text-transparent">
+            <main className="flex flex-col w-full lg:max-w-[1000px] xl:max-w-[1100px] h-full items-center gap-5 py-10 px-4 sm:px-6 justify-center mx-auto">
+                <h1 className="font-bold text-center text-4xl sm:text-5xl bg-clip-text bg-linear-to-r from-blue-600 to-teal-600 text-transparent">
                     Used Vehicle Price Predictor
                 </h1>
-                <p className="text-gray-600">Enter the vehicle details to get an instant price estimate</p>
+                <p className="text-gray-500 sm:text-lg">Enter the vehicle details to get an instant price estimate</p>
+
                 <Form {...formProps}></Form>
                 {prediction && <Prediction prediction={prediction} />}
             </main>

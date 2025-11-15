@@ -22,6 +22,7 @@ const Form = ({
     vehicleType,
     serverReady,
     prediction,
+    priceLoading,
     setCylindersType,
     setManufacturerType,
     setConditionType,
@@ -31,6 +32,7 @@ const Form = ({
     setVehicleType,
     setServerReady,
     setPrediction,
+    setPriceLoading,
 }: formPropsType) => {
     async function handleSubmit(formData: FormData) {
         const data: parametersType = {
@@ -65,109 +67,126 @@ const Form = ({
         console.log(data);
 
         if (serverReady) {
+            setPriceLoading(true);
             const res = await axios.post("https://vehicle-price-predictor-model-render.onrender.com/predict", data);
             setPrediction(Number(res.data.prediction));
             console.log(prediction);
+            setPriceLoading(false);
         }
     }
     return (
         <form
-            className="flex flex-col gap-5 bg-[rgb(255,255,255)] p-8 rounded-2xl shadow-2xl w-full border text-sm border-gray-100 "
+            className="flex flex-col gap-5 bg-[rgb(255,255,255)] p-8 rounded-2xl shadow-2xl mt-5 w-full border text-sm border-gray-100 "
             onSubmit={(e) => {
                 e.preventDefault();
                 handleSubmit(new FormData(e.target as HTMLFormElement));
             }}
         >
-            <div>
-                <label htmlFor="year" className="label">
-                    Year
-                </label>
-                <input
-                    className="input"
-                    type="number"
-                    placeholder="e.g., 2020"
-                    name="year"
-                    min="1950"
-                    max="2025"
-                    required
+            <div className="flex flex-col gap-5 lg:gap-y-8 xl:gap-x-8 md:grid md:grid-cols-2 md:gap-6">
+                <div>
+                    <label htmlFor="year" className="label">
+                        Year
+                    </label>
+                    <input
+                        className="input"
+                        type="number"
+                        placeholder="e.g., 2020"
+                        name="year"
+                        min="1950"
+                        max="2025"
+                        required
+                    />
+                </div>
+                <div>
+                    <label htmlFor="odometer" className="label">
+                        Odometer (km)
+                    </label>
+                    <input
+                        className="input"
+                        type="number"
+                        placeholder="e.g., 45000"
+                        name="odometer"
+                        min="0"
+                        max="800000"
+                        required
+                    />
+                </div>
+                <CustomSelect
+                    name="cylinders"
+                    label="Cylinders"
+                    placeholder="Select cylinders"
+                    options={cylindersOptions}
+                    selectedOption={cylindersType}
+                    setSelectedOption={setCylindersType}
                 />
-            </div>
-            <div>
-                <label htmlFor="odometer" className="label">
-                    Odometer (km)
-                </label>
-                <input
-                    className="input"
-                    type="number"
-                    placeholder="e.g., 45000"
-                    name="odometer"
-                    min="0"
-                    max="800000"
-                    required
+                <CustomSelect
+                    name="manufacturer"
+                    label="Manufacturer"
+                    placeholder="Select manufacturer"
+                    options={manufacturerOptions}
+                    selectedOption={manufacturerType}
+                    setSelectedOption={setManufacturerType}
                 />
+                <CustomSelect
+                    name="condition"
+                    label="Condition"
+                    placeholder="Select condition"
+                    options={conditionOptions}
+                    selectedOption={conditionType}
+                    setSelectedOption={setConditionType}
+                />
+                <CustomSelect
+                    name="fuel-type"
+                    label="Fuel Type"
+                    placeholder="Select fuel type"
+                    options={fuelOptions}
+                    selectedOption={fuelType}
+                    setSelectedOption={setFuelType}
+                />
+                <CustomSelect
+                    name="transmission"
+                    label="Transmission Type"
+                    placeholder="Select transmission"
+                    options={transmissionOptions}
+                    selectedOption={transmissionType}
+                    setSelectedOption={setTransmissionType}
+                />
+                <CustomSelect
+                    name="drive-type"
+                    label="Drive Type"
+                    placeholder="Select drive type"
+                    options={driveOptions}
+                    selectedOption={driveType}
+                    setSelectedOption={setDriveType}
+                />
+                <div className="last:col-span-full">
+                    <CustomSelect
+                        name="vehicle-type"
+                        label="Vehicle Type"
+                        placeholder="Select vehicle type"
+                        options={vehicleOptions}
+                        selectedOption={vehicleType}
+                        setSelectedOption={setVehicleType}
+                    />
+                </div>
             </div>
-            <CustomSelect
-                name="cylinders"
-                label="Cylinders"
-                placeholder="Select cylinders"
-                options={cylindersOptions}
-                selectedOption={cylindersType}
-                setSelectedOption={setCylindersType}
-            />
-            <CustomSelect
-                name="manufacturer"
-                label="Manufacturer"
-                placeholder="Select manufacturer"
-                options={manufacturerOptions}
-                selectedOption={manufacturerType}
-                setSelectedOption={setManufacturerType}
-            />
-            <CustomSelect
-                name="condition"
-                label="Condition"
-                placeholder="Select condition"
-                options={conditionOptions}
-                selectedOption={conditionType}
-                setSelectedOption={setConditionType}
-            />
-            <CustomSelect
-                name="fuel-type"
-                label="Fuel Type"
-                placeholder="Select fuel type"
-                options={fuelOptions}
-                selectedOption={fuelType}
-                setSelectedOption={setFuelType}
-            />
-            <CustomSelect
-                name="transmission"
-                label="Transmission Type"
-                placeholder="Select transmission"
-                options={transmissionOptions}
-                selectedOption={transmissionType}
-                setSelectedOption={setTransmissionType}
-            />
-            <CustomSelect
-                name="drive-type"
-                label="Drive Type"
-                placeholder="Select drive type"
-                options={driveOptions}
-                selectedOption={driveType}
-                setSelectedOption={setDriveType}
-            />
-            <CustomSelect
-                name="vehicle-type"
-                label="Vehicle Type"
-                placeholder="Select vehicle type"
-                options={vehicleOptions}
-                selectedOption={vehicleType}
-                setSelectedOption={setVehicleType}
-            />
-            <button
-                type="submit"
-                className="h-12 w-45 border rounded-lg mx-auto bg-linear-to-r from-blue-600 to-teal-600  hover:from-blue-700 hover:to-teal-700 text-white font-medium text-[15px]"
-            >
-                Predict Price
-            </button>
+            {priceLoading && (
+                <button
+                    type="submit"
+                    className="flex justify-center items-center gap-2 h-12 lg:h-15 w-45 lg:w-55 border rounded-lg mx-auto opacity-75 bg-linear-to-r from-blue-600 to-teal-600  hover:from-blue-700 hover:to-teal-700 text-white font-medium text-[15px] lg:text-[17px]"
+                >
+                    <div className="w-4 h-4 lg:w-6 lg:h-6 mb-1 border-2 lg:border-3 border-gray-400 border-t-gray-600 rounded-full animate-spin"></div>
+                    <p>Predicting Price</p>
+                </button>
+            )}
+            {!priceLoading && (
+                <button
+                    type="submit"
+                    className="flex justify-center items-center gap-2 h-12 lg:h-15 w-45 lg:w-55 border rounded-lg mx-auto bg-linear-to-r from-blue-600 to-teal-600  hover:from-blue-700 hover:to-teal-700 text-white font-medium text-[15px] lg:text-[17px]"
+                >
+                    <p>Predict Price</p>
+                </button>
+            )}
             <Toaster
                 position="top-center"
                 toastOptions={{

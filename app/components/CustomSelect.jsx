@@ -28,10 +28,22 @@ const CustomSelect = ({ name, label, placeholder, options, selectedOption, setSe
             color: "#6B7280", // placeholder:text-gray-500
             fontSize: "13px",
             fontWeight: "400", // placeholder:font-normal
+            "@media (min-width: 640px)": {
+                // Tailwind `sm:` breakpoint
+                fontSize: "15px",
+            },
         }),
         singleValue: (base) => ({
             ...base,
             color: "#374151", // text-gray-700
+            "@media (min-width: 640px)": {
+                // Tailwind `sm:` breakpoint
+                fontSize: "15px",
+            },
+            "@media (min-width: 1024px)": {
+                // Tailwind `sm:` breakpoint
+                fontSize: "16px",
+            },
         }),
         menu: (base) => ({
             ...base,
@@ -56,6 +68,14 @@ const CustomSelect = ({ name, label, placeholder, options, selectedOption, setSe
             cursor: "pointer",
             "&:active": {
                 backgroundColor: "#F3F4F6",
+            },
+            "@media (min-width: 640px)": {
+                // Tailwind `sm:` breakpoint
+                fontSize: "15px",
+            },
+            "@media (min-width: 1024px)": {
+                // Tailwind `sm:` breakpoint
+                fontSize: "16px",
             },
         }),
     };

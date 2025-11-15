@@ -10,6 +10,7 @@ export type formPropsType = {
     vehicleType: OptionType | null;
     serverReady: boolean;
     prediction: number | null;
+    priceLoading: boolean;
 
     setCylindersType: (value: OptionType | null) => void;
     setManufacturerType: (value: OptionType | null) => void;
@@ -20,6 +21,7 @@ export type formPropsType = {
     setVehicleType: (value: OptionType | null) => void;
     setServerReady: (value: boolean) => void;
     setPrediction: (value: number | null) => void;
+    setPriceLoading: (value: boolean) => void;
 };
 
 export type parametersType = {
