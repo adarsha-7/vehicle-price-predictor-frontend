@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Form from "./components/Form";
 import Prediction from "./components/Prediction";
+import ThemeToggle from "./components/ThemeToggle";
 import type { formPropsType, OptionType } from "./types";
 
 export default function Home() {
     const [serverReady, setServerReady] = useState<boolean>(false);
     const [prediction, setPrediction] = useState<null | number>(null);
     const [priceLoading, setPriceLoading] = useState<boolean>(false);
-    const [darkMode, setDarkMode] = useState<boolean>(false);
 
     // wake the server
     useEffect(() => {
@@ -56,6 +56,8 @@ export default function Home() {
 
     return (
         <div>
+            <ThemeToggle />
+
             <main className="flex flex-col w-full lg:max-w-[1000px] xl:max-w-[1100px] h-full items-center gap-5 py-10 px-4 sm:px-6 justify-center mx-auto">
                 <h1 className="font-bold dark:font-extrabold text-center text-4xl sm:text-5xl bg-clip-text bg-linear-to-r from-blue-600 to-teal-600 text-transparent dark:text-white">
                     Used Vehicle Price Predictor
