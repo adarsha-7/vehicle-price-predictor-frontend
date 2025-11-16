@@ -76,7 +76,7 @@ const Form = ({
     }
     return (
         <form
-            className="flex flex-col gap-5 bg-[rgb(255,255,255)] p-8 rounded-2xl shadow-2xl mt-5 w-full border text-sm border-gray-100 "
+            className="flex flex-col gap-5 bg-[rgb(255,255,255)] dark:bg-gray-900 p-8 rounded-2xl shadow-2xl mt-5 w-full border text-sm border-gray-100 dark:border-gray-700"
             onSubmit={(e) => {
                 e.preventDefault();
                 handleSubmit(new FormData(e.target as HTMLFormElement));
@@ -173,16 +173,16 @@ const Form = ({
             {priceLoading && (
                 <button
                     type="submit"
-                    className="flex justify-center items-center gap-2 h-12 lg:h-15 w-45 lg:w-55 border rounded-lg mx-auto opacity-75 bg-linear-to-r from-blue-600 to-teal-600  hover:from-blue-700 hover:to-teal-700 text-white font-medium text-[15px] lg:text-[17px]"
+                    className="flex justify-center items-center gap-2 h-12 lg:h-15 w-45 lg:w-55 border dark:border-0 rounded-lg mx-auto opacity-75 bg-linear-to-r from-blue-500 to-teal-500  hover:from-blue-700 hover:to-teal-700 text-white font-medium text-[15px] lg:text-[17px]"
                 >
-                    <div className="w-4 h-4 lg:w-6 lg:h-6 mb-1 border-2 lg:border-3 border-gray-400 border-t-gray-600 rounded-full animate-spin"></div>
-                    <p>Predicting Price</p>
+                    <div className="w-5 h-5 lg:w-6 lg:h-6 mb-1 border-2 lg:border-3 border-gray-400 border-t-gray-200 rounded-full animate-spin"></div>
+                    <p>Predicting...</p>
                 </button>
             )}
             {!priceLoading && (
                 <button
                     type="submit"
-                    className="flex justify-center items-center gap-2 h-12 lg:h-15 w-45 lg:w-55 border rounded-lg mx-auto bg-linear-to-r from-blue-600 to-teal-600  hover:from-blue-700 hover:to-teal-700 text-white font-medium text-[15px] lg:text-[17px]"
+                    className="flex justify-center items-center gap-2 h-12 lg:h-15 w-45 lg:w-55 border dark:border-0 rounded-lg mx-auto bg-linear-to-r from-blue-500 to-teal-500  hover:from-blue-600 hover:to-teal-600 text-white dark:text-gray-900 font-medium text-[15px] lg:text-[17px]"
                 >
                     <p>Predict Price</p>
                 </button>

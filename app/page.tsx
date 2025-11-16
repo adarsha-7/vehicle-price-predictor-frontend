@@ -10,6 +10,8 @@ export default function Home() {
     const [serverReady, setServerReady] = useState<boolean>(false);
     const [prediction, setPrediction] = useState<null | number>(null);
     const [priceLoading, setPriceLoading] = useState<boolean>(false);
+    const [darkMode, setDarkMode] = useState<boolean>(false);
+
     // wake the server
     useEffect(() => {
         axios
@@ -55,10 +57,12 @@ export default function Home() {
     return (
         <div>
             <main className="flex flex-col w-full lg:max-w-[1000px] xl:max-w-[1100px] h-full items-center gap-5 py-10 px-4 sm:px-6 justify-center mx-auto">
-                <h1 className="font-bold text-center text-4xl sm:text-5xl bg-clip-text bg-linear-to-r from-blue-600 to-teal-600 text-transparent">
+                <h1 className="font-bold dark:font-extrabold text-center text-4xl sm:text-5xl bg-clip-text bg-linear-to-r from-blue-600 to-teal-600 text-transparent dark:text-white">
                     Used Vehicle Price Predictor
                 </h1>
-                <p className="text-gray-500 sm:text-lg">Enter the vehicle details to get an instant price estimate</p>
+                <p className="text-gray-500 dark:text-gray-400 sm:text-lg">
+                    Enter the vehicle details to get an instant price estimate
+                </p>
 
                 <Form {...formProps}></Form>
                 {prediction && <Prediction prediction={prediction} />}

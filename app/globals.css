@@ -15,14 +15,18 @@
 }
 
 body {
-    background: var(--background);
-    color: var(--foreground);
     font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+    body {
+        @apply bg-background dark:bg-gray-950 text-foreground dark:text-gray-200;
+    }
 }
 
 @layer components {
     .label {
-        @apply text-[13px] sm:text-[14px] lg:text-[15px] text-gray-700 font-medium;
+        @apply text-[13px] sm:text-[14px] lg:text-[15px] font-medium;
     }
     .input {
         @apply h-10 w-full mt-1 rounded-lg shadow-2xs p-3 border text-[14px] sm:text-[15px] lg:text-[16px] border-gray-200 text-gray-700 placeholder:text-gray-500 placeholder:font-normal placeholder:text-[13px] sm:placeholder:text-[15px];
