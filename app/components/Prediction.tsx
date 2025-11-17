@@ -1,5 +1,3 @@
-import React from "react";
-
 const Prediction = ({ prediction }: { prediction: number }) => {
     return (
         <section className="flex flex-col lg:flex-row gap-5 p-8 mt-3 rounded-2xl w-full bg-linear-to-br from-blue-600 to-teal-600 text-blue-100 items-center lg:text-[18px]">

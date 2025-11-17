@@ -1,5 +1,4 @@
 import axios from "axios";
-import Select from "./Select";
 import { Toaster, toast } from "sonner";
 import {
     cylindersOptions,
@@ -9,7 +8,8 @@ import {
     transmissionOptions,
     driveOptions,
     vehicleOptions,
-} from "@/app/data/options";
+} from "../data";
+import Select from "./Select";
 import type { formPropsType, parametersType } from "../types";
 
 const Form = ({
