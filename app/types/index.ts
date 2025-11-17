@@ -35,3 +35,12 @@ export type parametersType = {
     drive: string | null;
     type: string | null;
 };
+
+export type selectPropsType = {
+    name: string;
+    label: string;
+    placeholder: string;
+    options: OptionType[];
+    selectedOption: OptionType | null;
+    setSelectedOption: (value: OptionType | null) => void;
+};

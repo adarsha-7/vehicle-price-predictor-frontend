@@ -1,5 +1,5 @@
 import axios from "axios";
-import CustomSelect from "./CustomSelect";
+import Select from "./Select";
 import { Toaster, toast } from "sonner";
 import {
     cylindersOptions,
@@ -88,6 +88,7 @@ const Form = ({
                         Year
                     </label>
                     <input
+                        id="year"
                         className="input"
                         type="number"
                         placeholder="e.g., 2020"
@@ -102,6 +103,7 @@ const Form = ({
                         Odometer (km)
                     </label>
                     <input
+                        id="odometer"
                         className="input"
                         type="number"
                         placeholder="e.g., 45000"
@@ -111,7 +113,7 @@ const Form = ({
                         required
                     />
                 </div>
-                <CustomSelect
+                <Select
                     name="cylinders"
                     label="Cylinders"
                     placeholder="Select cylinders"
@@ -119,7 +121,7 @@ const Form = ({
                     selectedOption={cylindersType}
                     setSelectedOption={setCylindersType}
                 />
-                <CustomSelect
+                <Select
                     name="manufacturer"
                     label="Manufacturer"
                     placeholder="Select manufacturer"
@@ -127,7 +129,7 @@ const Form = ({
                     selectedOption={manufacturerType}
                     setSelectedOption={setManufacturerType}
                 />
-                <CustomSelect
+                <Select
                     name="condition"
                     label="Condition"
                     placeholder="Select condition"
@@ -135,7 +137,7 @@ const Form = ({
                     selectedOption={conditionType}
                     setSelectedOption={setConditionType}
                 />
-                <CustomSelect
+                <Select
                     name="fuel-type"
                     label="Fuel Type"
                     placeholder="Select fuel type"
@@ -143,7 +145,7 @@ const Form = ({
                     selectedOption={fuelType}
                     setSelectedOption={setFuelType}
                 />
-                <CustomSelect
+                <Select
                     name="transmission"
                     label="Transmission Type"
                     placeholder="Select transmission"
@@ -151,7 +153,7 @@ const Form = ({
                     selectedOption={transmissionType}
                     setSelectedOption={setTransmissionType}
                 />
-                <CustomSelect
+                <Select
                     name="drive-type"
                     label="Drive Type"
                     placeholder="Select drive type"
@@ -160,7 +162,7 @@ const Form = ({
                     setSelectedOption={setDriveType}
                 />
                 <div className="last:col-span-full">
-                    <CustomSelect
+                    <Select
                         name="vehicle-type"
                         label="Vehicle Type"
                         placeholder="Select vehicle type"

@@ -5,6 +5,7 @@ import axios from "axios";
 import Form from "./components/Form";
 import Prediction from "./components/Prediction";
 import ThemeToggle from "./components/ThemeToggle";
+import ServerStatus from "./components/ServerStatus";
 import type { formPropsType, OptionType } from "./types";
 
 export default function Home() {
@@ -57,8 +58,9 @@ export default function Home() {
     return (
         <div>
             <ThemeToggle />
+            <ServerStatus serverReady={serverReady} />
 
-            <main className="flex flex-col w-full lg:max-w-[1000px] xl:max-w-[1100px] h-full items-center gap-5 py-10 px-4 sm:px-6 justify-center mx-auto">
+            <main className="flex flex-col w-full lg:max-w-[1000px] xl:max-w-[1100px] h-full items-center gap-5 py-14 px-4 sm:px-6 justify-center mx-auto">
                 <h1 className="font-bold dark:font-extrabold text-center text-4xl sm:text-5xl bg-clip-text bg-linear-to-r from-blue-600 to-teal-600 text-transparent dark:text-white">
                     Used Vehicle Price Predictor
                 </h1>

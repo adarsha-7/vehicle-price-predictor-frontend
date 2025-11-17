@@ -3,11 +3,9 @@ import { OptionType } from "../types";
 export const cylindersOptions: OptionType[] = [
     { value: "3 cylinders", label: "3 Cylinders" },
     { value: "4 cylinders", label: "4 Cylinders" },
-    { value: "5 cylinders", label: "5 Cylinders" },
     { value: "6 cylinders", label: "6 Cylinders" },
     { value: "8 cylinders", label: "8 Cylinders" },
     { value: "10 cylinders", label: "10 Cylinders" },
-    { value: "12 cylinders", label: "12 Cylinders" },
     { value: "other", label: "Other" },
 ];
 
@@ -19,11 +17,9 @@ export const manufacturerOptions: OptionType[] = [
     { value: "chevrolet", label: "Chevrolet" },
     { value: "datsun", label: "Datsun" },
     { value: "dodge", label: "Dodge" },
-    { value: "ferrari", label: "Ferrari" },
     { value: "fiat", label: "Fiat" },
     { value: "ford", label: "Ford" },
     { value: "gmc", label: "GMC" },
-    { value: "harley-davidson", label: "Harley-Davidson" },
     { value: "honda", label: "Honda" },
     { value: "hyundai", label: "Hyundai" },
     { value: "jaguar", label: "Jaguar" },
@@ -31,7 +27,6 @@ export const manufacturerOptions: OptionType[] = [
     { value: "kia", label: "Kia" },
     { value: "land rover", label: "Land Rover" },
     { value: "lexus", label: "Lexus" },
-    { value: "lincoln", label: "Lincoln" },
     { value: "mazda", label: "Mazda" },
     { value: "mercedes-benz", label: "Mercedes-Benz" },
     { value: "mini", label: "Mini" },
@@ -48,7 +43,6 @@ export const manufacturerOptions: OptionType[] = [
 ];
 
 export const conditionOptions: OptionType[] = [
-    { value: "new", label: "New" },
     { value: "like new", label: "Like New" },
     { value: "excellent", label: "Excellent" },
     { value: "good", label: "Good" },
