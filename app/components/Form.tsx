@@ -76,7 +76,7 @@ const Form = ({
     }
     return (
         <form
-            className="flex flex-col gap-5 bg-[rgb(255,255,255)] dark:bg-gray-900 p-8 rounded-2xl shadow-2xl mt-5 w-full border text-sm border-gray-100 dark:border-gray-700"
+            className="flex flex-col gap-5 bg-[rgb(255,255,255)] dark:bg-gray-900 p-8 rounded-2xl shadow-2xl mt-15 w-full border text-sm border-gray-100 dark:border-gray-700"
             onSubmit={(e) => {
                 e.preventDefault();
                 handleSubmit(new FormData(e.target as HTMLFormElement));

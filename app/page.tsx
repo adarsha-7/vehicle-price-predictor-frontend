@@ -60,13 +60,19 @@ export default function Home() {
             <ThemeToggle />
             <ServerStatus serverReady={serverReady} />
 
-            <main className="flex flex-col w-full lg:max-w-[1000px] xl:max-w-[1100px] h-full items-center gap-5 py-14 px-4 sm:px-6 justify-center mx-auto">
-                <h1 className="font-bold dark:font-extrabold text-center text-4xl sm:text-5xl bg-clip-text bg-linear-to-r from-blue-600 to-teal-600 text-transparent dark:text-white">
+            <main className="flex flex-col w-full lg:max-w-[1000px] xl:max-w-[1100px] h-full items-center py-14 px-4 sm:px-6 justify-center mx-auto">
+                <h1 className="font-bold dark:font-extrabold mb-5 text-center text-4xl sm:text-5xl bg-clip-text bg-linear-to-r from-blue-600 to-teal-600 text-transparent dark:text-white">
                     Used Vehicle Price Predictor
                 </h1>
-                <p className="text-gray-500 dark:text-gray-400 sm:text-lg">
-                    Enter the vehicle details to get an instant price estimate
-                </p>
+                <div className="text-gray-500 dark:text-gray-400 text-md md:text-lg text-center">
+                    <p className="hidden md:block">
+                        Looking to buy or sell a used car but unsure about its actual value?
+                    </p>
+                    <p>
+                        Enter the vehicle details to get an instant price estimate, powered by data from over 300,000
+                        listings.
+                    </p>
+                </div>
 
                 <Form {...formProps}></Form>
                 {prediction && <Prediction prediction={prediction} />}
