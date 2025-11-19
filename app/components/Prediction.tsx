@@ -2,7 +2,7 @@ const Prediction = ({ prediction }: { prediction: number }) => {
     return (
         <section className="flex flex-col lg:flex-row gap-5 p-8 mt-3 rounded-2xl w-full bg-linear-to-br from-blue-600 to-teal-600 text-blue-100 items-center lg:text-[18px]">
             <div className="flex-1 flex flex-col gap-5 mt-3 rounded-2xl items-center">
-                <h1>PREDICTED PRICE</h1>
+                <h1>PREDICTED LISTING PRICE</h1>
                 <span className="text-6xl md:text-7xl font-bold text-white">
                     ${Math.round(prediction).toLocaleString()}
                 </span>
