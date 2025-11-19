@@ -33,7 +33,7 @@ const Form = ({
 }: formPropsType) => {
     async function handleSubmit(formData: FormData) {
         const data: parametersType = {
-            year: Number(formData.get("year")),
+            year: Number(formData.get("year")) - 5,
             odometer: Number(formData.get("odometer")) * 0.621371,
             cylinders: cylindersType?.value || null,
             condition: conditionType?.value || null,
