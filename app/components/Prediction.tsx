@@ -11,7 +11,7 @@ const Prediction = ({ prediction }: { prediction: number }) => {
             <div className="flex-1 mt-4 w-full bg-white/20 rounded-lg p-3 text-xs sm:text-sm">
                 <p className="font-semibold mb-1">Note:</p>
                 <p className="opacity-90">
-                    This is an estimate based on historical data. Prices may vary significantly for electric vehicles
+                    This is an estimate based on user listings in a website. Prices may vary significantly for electric vehicles
                     and vehicles outside typical market ranges.
                 </p>
             </div>
