@@ -25,7 +25,6 @@ export default function Home() {
     }, []);
 
     const [cylindersType, setCylindersType] = useState<OptionType | null>(null);
-    const [manufacturerType, setManufacturerType] = useState<OptionType | null>(null);
     const [conditionType, setConditionType] = useState<OptionType | null>(null);
     const [fuelType, setFuelType] = useState<OptionType | null>(null);
     const [transmissionType, setTransmissionType] = useState<OptionType | null>(null);
@@ -34,7 +33,6 @@ export default function Home() {
 
     const formProps: formPropsType = {
         cylindersType,
-        manufacturerType,
         conditionType,
         fuelType,
         transmissionType,
@@ -44,7 +42,6 @@ export default function Home() {
         prediction,
         priceLoading,
         setCylindersType,
-        setManufacturerType,
         setConditionType,
         setFuelType,
         setTransmissionType,

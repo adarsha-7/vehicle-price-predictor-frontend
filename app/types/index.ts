@@ -2,7 +2,6 @@ export type OptionType = { value: string; label: string };
 
 export type formPropsType = {
     cylindersType: OptionType | null;
-    manufacturerType: OptionType | null;
     conditionType: OptionType | null;
     fuelType: OptionType | null;
     transmissionType: OptionType | null;
@@ -13,7 +12,6 @@ export type formPropsType = {
     priceLoading: boolean;
 
     setCylindersType: (value: OptionType | null) => void;
-    setManufacturerType: (value: OptionType | null) => void;
     setConditionType: (value: OptionType | null) => void;
     setFuelType: (value: OptionType | null) => void;
     setTransmissionType: (value: OptionType | null) => void;
@@ -28,7 +26,6 @@ export type parametersType = {
     year: number;
     odometer: number;
     cylinders: string | null;
-    manufacturer: string | null;
     condition: string | null;
     fuel: string | null;
     transmission: string | null;
