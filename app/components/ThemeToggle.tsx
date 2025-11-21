@@ -16,12 +16,12 @@ const ThemeToggle = () => {
     return (
         <button
             onClick={toggleDarkMode}
-            className="absolute z-15 top-3 md:top-4 left-4 w-7 h-7 md:w-9 md:h-9 lg:w-10 lg:h-10 cursor-pointer flex items-center justify-center border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition"
+            className="absolute top-3 left-4 z-15 flex h-7 w-7 cursor-pointer items-center justify-center rounded-full border border-gray-300 transition hover:bg-gray-100 md:top-4 md:h-9 md:w-9 lg:h-10 lg:w-10 dark:border-gray-600 dark:hover:bg-gray-800"
         >
             {dark ? (
-                <SunIcon className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6 text-gray-300" />
+                <SunIcon className="h-4 w-4 text-gray-300 md:h-5 md:w-5 lg:h-6 lg:w-6" />
             ) : (
-                <MoonIcon className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6 text-gray-600" />
+                <MoonIcon className="h-4 w-4 text-gray-600 md:h-5 md:w-5 lg:h-6 lg:w-6" />
             )}
         </button>
     );

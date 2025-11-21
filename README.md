@@ -4,15 +4,18 @@
 
 ## Features:
 
-#### - Clean, minimal UI for entering vehicle attributes.  
-#### - Sends the input data to the prediction API.  
-#### - Displays the predicted price instantly on the same page.  
+#### - Clean, minimal UI for entering vehicle attributes.
+
+#### - Sends the input data to the prediction API.
+
+#### - Displays the predicted price instantly on the same page.
 
 ## Tools/Libraries/Frameworks Used
 
 ### Frontend Framework:
 
-#### - Next.js  
+#### - Next.js
+
 #### - React
 
 ### Styling:
@@ -25,7 +28,10 @@
 
 ## How to Use
 
-#### - Open the web app.  
-#### - Fill out the form with vehicle details (year, odometer, manufacturer, etc.).  
-#### - Click the **Predict** button.  
+#### - Open the web app.
+
+#### - Fill out the form with vehicle details (year, odometer, manufacturer, etc.).
+
+#### - Click the **Predict** button.
+
 #### - The predicted price returned by the API will appear on the screen.

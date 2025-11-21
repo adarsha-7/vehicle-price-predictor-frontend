@@ -71,13 +71,13 @@ const Form = ({
     }
     return (
         <form
-            className="flex flex-col gap-5 bg-[rgb(255,255,255)] dark:bg-gray-900 p-8 mb-3 rounded-2xl shadow-2xl mt-15 w-full border text-sm border-gray-100 dark:border-gray-700"
+            className="mt-15 mb-3 flex w-full flex-col gap-5 rounded-2xl border border-gray-100 bg-[rgb(255,255,255)] p-8 text-sm shadow-2xl dark:border-gray-700 dark:bg-gray-900"
             onSubmit={(e) => {
                 e.preventDefault();
                 handleSubmit(new FormData(e.target as HTMLFormElement));
             }}
         >
-            <div className="flex flex-col gap-5 lg:gap-y-8 xl:gap-x-8 md:grid md:grid-cols-2 md:gap-6">
+            <div className="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6 lg:gap-y-8 xl:gap-x-8">
                 <div>
                     <label htmlFor="year" className="label">
                         Year
@@ -160,16 +160,16 @@ const Form = ({
             {priceLoading && (
                 <button
                     type="submit"
-                    className="flex justify-center items-center gap-2 h-12 lg:h-15 w-45 lg:w-55 border dark:border-0 rounded-lg mx-auto mt-10 opacity-75 bg-linear-to-r from-blue-500 to-teal-500  hover:from-blue-700 hover:to-teal-700 text-white dark:text-gray-900 font-medium text-[15px] lg:text-[17px]"
+                    className="mx-auto mt-10 flex h-12 w-45 items-center justify-center gap-2 rounded-lg border bg-linear-to-r from-blue-500 to-teal-500 text-[15px] font-medium text-white opacity-75 hover:from-blue-700 hover:to-teal-700 lg:h-15 lg:w-55 lg:text-[17px] dark:border-0 dark:text-gray-900"
                 >
-                    <div className="w-5 h-5 lg:w-6 lg:h-6 mb-1 border-2 lg:border-3 border-gray-400 border-t-gray-200 rounded-full animate-spin"></div>
+                    <div className="mb-1 h-5 w-5 animate-spin rounded-full border-2 border-gray-400 border-t-gray-200 lg:h-6 lg:w-6 lg:border-3"></div>
                     <p>Predicting...</p>
                 </button>
             )}
             {!priceLoading && (
                 <button
                     type="submit"
-                    className="flex justify-center items-center gap-2 h-12 lg:h-15 w-45 lg:w-55 border dark:border-0 rounded-lg mx-auto mt-10 bg-linear-to-r from-blue-500 to-teal-500  hover:from-blue-600 hover:to-teal-600 text-white dark:text-gray-900 font-medium text-[15px] lg:text-[17px]"
+                    className="mx-auto mt-10 flex h-12 w-45 items-center justify-center gap-2 rounded-lg border bg-linear-to-r from-blue-500 to-teal-500 text-[15px] font-medium text-white hover:from-blue-600 hover:to-teal-600 lg:h-15 lg:w-55 lg:text-[17px] dark:border-0 dark:text-gray-900"
                 >
                     <p>Predict Price</p>
                 </button>

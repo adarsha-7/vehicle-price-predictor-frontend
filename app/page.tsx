@@ -57,11 +57,11 @@ export default function Home() {
             <ThemeToggle />
             <ServerStatus serverReady={serverReady} />
 
-            <main className="flex flex-col w-full lg:max-w-[1000px] xl:max-w-[1100px] h-full items-center py-14 px-4 sm:px-6 justify-center mx-auto">
-                <h1 className="font-bold dark:font-extrabold mb-5 text-center text-4xl sm:text-5xl bg-clip-text bg-linear-to-r from-blue-600 to-teal-600 text-transparent dark:text-white">
+            <main className="mx-auto flex h-full w-full flex-col items-center justify-center px-4 py-14 sm:px-6 lg:max-w-[1000px] xl:max-w-[1100px]">
+                <h1 className="mb-5 bg-linear-to-r from-blue-600 to-teal-600 bg-clip-text text-center text-4xl font-bold text-transparent sm:text-5xl dark:font-extrabold dark:text-white">
                     Used Vehicle Price Predictor
                 </h1>
-                <div className="text-gray-500 dark:text-gray-400 text-md md:text-lg text-center">
+                <div className="text-md text-center text-gray-500 md:text-lg dark:text-gray-400">
                     <p className="hidden md:block">
                         Looking to buy or sell a used car but unsure about its actual value?
                     </p>

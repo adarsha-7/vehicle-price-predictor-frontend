@@ -20,19 +20,19 @@ body {
 
 @layer base {
     body {
-        @apply bg-background dark:bg-gray-950 text-foreground dark:text-gray-300;
+        @apply bg-background text-foreground dark:bg-gray-950 dark:text-gray-300;
     }
 }
 
 @layer components {
     .label {
-        @apply text-[13px] sm:text-[14px] lg:text-[15px] font-medium;
+        @apply text-[13px] font-medium sm:text-[14px] lg:text-[15px];
     }
     .input {
-        @apply h-10 w-full mt-1 rounded-lg shadow-2xs dark:shadow-none p-3 border text-[14px] sm:text-[15px] dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 placeholder:text-gray-500 dark:placeholder:text-gray-400 placeholder:font-normal placeholder:text-[13px] sm:placeholder:text-[15px];
+        @apply mt-1 h-10 w-full rounded-lg border border-gray-200 p-3 text-[14px] text-gray-700 shadow-2xs placeholder:text-[13px] placeholder:font-normal placeholder:text-gray-500 sm:text-[15px] sm:placeholder:text-[15px] dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:shadow-none dark:placeholder:text-gray-400;
     }
     .input:focus {
-        @apply outline-2 dark:outline-none border-gray-400 dark:border-gray-500 outline-stone-200;
+        @apply border-gray-400 outline-2 outline-stone-200 dark:border-gray-500 dark:outline-none;
     }
 }
 

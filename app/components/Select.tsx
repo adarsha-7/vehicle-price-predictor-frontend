@@ -10,7 +10,7 @@ const Select = ({ label, placeholder, options, selectedOption, setSelectedOption
                 <Label className="label">{label}</Label>
                 <div className="relative mt-2">
                     <ListboxButton
-                        className={`input cursor-pointer flex justify-between ${
+                        className={`input flex cursor-pointer justify-between ${
                             selectedOption ? "" : "text-gray-500 dark:text-gray-400"
                         }`}
                     >
@@ -26,13 +26,13 @@ const Select = ({ label, placeholder, options, selectedOption, setSelectedOption
                     </ListboxButton>
                     <ListboxOptions
                         transition
-                        className="absolute cursor-pointer z-10 mt-1 max-h-56 border shadow-2xs bg-white border-gray-300 dark:border-gray-700 w-full overflow-auto rounded-lg dark:bg-gray-800 outline-none scrollbar-none"
+                        className="scrollbar-none absolute z-10 mt-1 max-h-56 w-full cursor-pointer overflow-auto rounded-lg border border-gray-300 bg-white shadow-2xs outline-none dark:border-gray-700 dark:bg-gray-800"
                     >
                         {options.map((option) => (
                             <ListboxOption
                                 key={option.value}
                                 value={option}
-                                className="group relative cursor-pointer py-2 pr-9 pl-3 select-none data-focus:bg-gray-200 dark:data-focus:bg-gray-700 my-2"
+                                className="group relative my-2 cursor-pointer py-2 pr-9 pl-3 select-none data-focus:bg-gray-200 dark:data-focus:bg-gray-700"
                             >
                                 <div className="flex items-center">
                                     <span className="ml-3 text-[14px] lg:text-[15px]">{option.label}</span>
