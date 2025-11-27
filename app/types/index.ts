@@ -26,7 +26,6 @@ export type parametersType = {
     year: number;
     odometer: number;
     cylinders: string | null;
-    condition: string | null;
     fuel: string | null;
     transmission: string | null;
     drive: string | null;

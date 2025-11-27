@@ -36,12 +36,13 @@ const Form = ({
             year: Number(formData.get("year")) - 5,
             odometer: Number(formData.get("odometer")) * 0.621371,
             cylinders: cylindersType?.value || null,
-            condition: conditionType?.value || null,
             fuel: fuelType?.value || null,
             transmission: transmissionType?.value || null,
             drive: driveType?.value || null,
             type: vehicleType?.value || null,
         };
+
+        const condition = conditionType?.value || null;
 
         const statesArray = [
             { state: cylindersType, name: "Cylinders" },
@@ -61,10 +62,19 @@ const Form = ({
 
         console.log(data);
 
+        let prediction = null;
+
         if (serverReady) {
             setPriceLoading(true);
             const res = await axios.post("https://vehicle-price-predictor-model-render.onrender.com/predict", data);
-            setPrediction(Number(res.data.prediction));
+            prediction = Number(res.data.prediction);
+
+            if (prediction) {
+                if (condition == "good") prediction -= (10 / 100) * prediction;
+                else if (condition == "fair") prediction -= (20 / 100) * prediction;
+            }
+
+            setPrediction(prediction);
             console.log(prediction);
             setPriceLoading(false);
         }
